@@ -602,7 +602,7 @@
 .category-item-link:hover{
     color: var(--text-orange-color);
 }
-    
+
 /* home soft + filter */
 .home-filter{
     display: flex;
