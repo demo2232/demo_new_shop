@@ -785,7 +785,8 @@
     top: 5px;
     left: -4px;
     font-size: 1.2rem;
-    padding: 0 5px 0 2px;
+    font-weight: 600;
+    padding: 0 6px 0 4px;
     color: var(--text-white-color);
     background-color:var(--orange-color);
     border-radius: 0 2px 2px 0;
