@@ -718,14 +718,17 @@
     display: flex;
     align-items: baseline;
     font-size:1.4rem;
+    flex-wrap: wrap;
 }
 .home-product-item-price-old{
-    margin:0 10px;
+    margin-left:10px;
     text-decoration: line-through;
     font-size: 1.3rem;
 }
 .home-product-item-price-current{
     color:var(--text-orange-color);
+    margin-left:10px;
+
 }
 .home-product-item-action{
     margin: 6px 10px 0;
@@ -743,7 +746,9 @@
 .home-product-item-action-click{
     font-size: 1.3rem;
 }
-
+.home-product-item-action-iconregular{
+    display: block;
+}
 .home-product-item-action-iconsolid{
     display: none;
 }
@@ -764,7 +769,7 @@
     color: var(--text-greyish-color);
 }
 .home-star-gold{
-    color: yellow;
+    color: var(--star-gold);
     text-shadow: 0 0 1px #ccc;
 }
 .home-product-item-notification-sold{
