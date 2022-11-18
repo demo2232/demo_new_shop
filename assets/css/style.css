@@ -112,7 +112,7 @@
     border-radius: 2px;
     box-shadow: 0 1px 2px #ccc;
     display: none;
-    z-index: 1;
+    z-index: 2;
 }
 .header__notify::before{
     display: block;
@@ -304,6 +304,7 @@
     background-color:#fff;
     box-shadow: 0 1px 2px #ccc;
     display: none;
+    z-index: 1;
 }
 .header-search-history-heading{
     font-size: 1.4rem;
@@ -496,11 +497,18 @@
     margin-right: 12px;
 }
 .header-cart-header-name{
+    flex: 1;
     font-size: 1.4rem;
     text-align: left;
+    line-height: 2rem;
+    max-height: 4rem;
     font-weight: 500;
-    padding-right: 10px;
-    margin:0 0 8px 0;   
+    padding: 0 8px 0 0;
+    margin: 0 0 6px 0 ; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+    overflow: hidden;
 }
 .header-cart-head-price{
     font-size: 1.4rem;
@@ -510,6 +518,7 @@
 .heaer-cart-item-body{
     display: flex;
     justify-content: space-between;
+    margin:  0 auto;
     align-items: center;
 }
 .header-cart-item-description{
@@ -545,11 +554,11 @@
 
 }
 .category-heading{
-    padding: 16px 20px 0 20px ;
-    font-size: 1.5rem;
+    padding: 16px 16px 0;
+    font-size: 1.6rem;
     font-weight: 400;
     text-transform: uppercase;
-    margin-top: 0;
+    margin:0;
 }
 .categorry-heading-icon{
     font-size: 1.6rem;
@@ -564,25 +573,22 @@
 }
 
 .category-item-link{
-    padding: 6px 20px;
-    position: relative;
+    padding: 8px 20px;
+    /* position: relative; */
     display: block;
     font-size: 1.4rem;
     text-decoration: none;
     color: var(--text-blackish-color);
-    transition: right linear 0.2s;
-    right: 0;
+
 }
 .category-item::before{
     position: absolute;
     display: block;
     content: "";
-    width: 80%;
-    height: 1px;
+    border-top: 1px solid #ccc;
     background-color: #ccc;
-    margin-top:0;
     left: 20px;
-    right: 0;
+    right: 20px;
 }
 .category-item:first-child::before{
     display: none;
@@ -594,11 +600,10 @@
     display: none;
 }
 .category-item-link:hover{
-    right: -4px;
     color: var(--text-orange-color);
 }
+    
 /* home soft + filter */
-
 .home-filter{
     display: flex;
     align-items: center;
