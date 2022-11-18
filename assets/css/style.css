@@ -853,7 +853,7 @@
 .home-number-of-pages-link{
     border-radius: 2px;
     text-align: center;
-    min-width: 50px;
+    min-width: 40px;
     display: block;
     --height:34px;
     height:var(--height);
