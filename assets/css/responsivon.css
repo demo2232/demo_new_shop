@@ -1,0 +1,149 @@
+/* tablet - mobile */
+@media (max-width:1023px)
+{
+	:root{
+		--header-height:68px;
+		--navbar-height:0px;
+	}
+	.hide-on-tablet-mobile{
+		display: none;
+	}
+	.header-cart-list{
+		position: fixed;
+		top: var(--header-height);
+		left: 0;
+		right: 0;
+		width: 100%;
+		padding: 0 calc((100% - 644px)/2);
+	}
+	.header-cart-list::after{
+		display: none;
+	}
+	.header__soft-bar{
+		display: flex;
+	}
+}
+/* tablet */
+@media (min-width:740px) and (max-width:1023px)
+{
+	.hide-on-tablet{
+		display: none;
+	}
+	.header{
+		position: fixed;
+		top: 0;left: 0;right: 0;
+		z-index: 10;
+	}
+	.header-cart{
+		width: 80px;
+		text-align: right;
+	}
+	.content-product{
+		width: 100%;
+	}
+	.app__container{
+		margin-top: var(--header-height);
+	}
+}
+
+/* mobile */
+@media (max-width:739px)
+{
+	:root{
+		--header-height:54px;
+		--navbar-height:0px;
+	}
+	.hide-on-mobile{
+		display: none;
+	}
+	.header{
+		position: fixed;
+		top: 0;right: 0;left: 0;
+		z-index: 10;	
+	}
+	.header-with-search{
+		justify-content: space-between;
+	}
+	.header-cart,
+	.header-logo{
+		width: unset;
+	}
+	.header__logo-img{
+		width: 110px;
+	}
+	.header-mobile-search{
+		display: block;
+	}
+	.header-search{
+		position: fixed;
+		z-index:1;
+		border: 1px solid rgba(0, 0, 0, 0.292);
+		left: 0;right: 0;
+		display: none;
+		top:calc(var(--header-height) / 2);
+		height: 46px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+		padding: 0 16px;
+		animation: searchmobile linear 0.3s;
+	}	
+	.header-search-history{
+		position: fixed;
+		top: calc(var(--header-height) + var(--header-sort-bar));
+		left: 0;right: 0;
+	}
+	@keyframes searchmobile{
+		from{
+			top:calc(var(--header-height) / 2);
+			opacity: 0;
+		}	
+		to{
+			top:var(--header-height);
+			opacity:1;
+		}
+	}
+	.app__container{
+		margin-top: var(--header-height);
+	}
+	.mobile-category{
+		display: block;
+	}
+	.content-product{
+		width: 100%;
+	}
+	.home-next-page-list{
+		--height:28px
+	}
+	.home-number-of-pages-item{
+		margin: 0 2px;
+	}
+	.home-number-of-pages-link{
+		--height: 28px;
+		font-size: 1.6rem;
+		min-width: 36px;
+	}
+	.app-content{
+		margin: 0 4px;
+	}
+	.footer{
+		margin: 0;
+	}
+	.footer-content{
+		padding: 0 16px;
+	}
+	.footer-content-item{
+		text-align: center;
+	}
+	.footer-list-app{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.footer-app{
+		display: flex;
+		flex-direction: column;
+	}
+	.footer-app a:nth-child(2){
+		margin-top: 14px;
+		margin-left: -6px;
+	}
+}

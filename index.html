@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/font/fontawesome-free-6.2.1-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/grid.css">
+    <!-- <link rel="stylesheet" href="./assets/css/grid.css">  -->
     <link rel="stylesheet" href="./assets/css/base.css">
-    <link rel="stylesheet" href="./assets/css/tablet.css">
-    <link rel="stylesheet" href="./assets/css/mobile.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsivon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>F8-Shopee</title>
 </head>
 <body>
     <div class="main">
         <header class="header">
-            <div class="grid">
-                <nav class="header-navbar">
+            <div class="grid wide">
+                <nav class="header-navbar hide-on-tablet-mobile">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item-separate">
                             Vào cửa hàng trên ứng dụng F8-Shop
@@ -59,7 +59,8 @@
                                             <a href="" class="header__notify-item-link">
                                                 <img src="./assets/img/header/san_pham.jpg" alt="" class="header__notify-img">
                                                 <div class="header__notify-info">
-                                                    <span class="header__notify-body-name">Xác thực chính hãng nguồn gốc các sản phẩm Ohui</span>
+                                                    <span class="header__notify-body-name">
+                                                        Xác thực chính hãng nguồn gốc các sản phẩm Ohui</span>
                                                     <span class="header__notify-description">HiddenTag là giải pháp xác thực hàng chính hãng bằng công nghệ tiên tiến nhất hiện nay.</span>
                                                 </div>
                                             </a>
@@ -78,7 +79,9 @@
                                                 <img src="./assets/img/header/san_pham.jpg" alt="" class="header__notify-img">
                                                 <div class="header__notify-info">
                                                     <span class="header__notify-body-name">Xác thực chính hãng nguồn gốc các sản phẩm Ohui</span>
-                                                    <span class="header__notify-description">HiddenTag là giải pháp xác thực hàng chính hãng bằng công nghệ tiên tiến nhất hiện nay.</span>
+                                                    <span class="header__notify-description">
+                                                        HiddenTag là giải pháp xác thực hàng chính hãng bằng công nghệ tiên tiến nhất hiện nay.
+                                                    </span>
                                                 </div>
                                             </a>
                                         </li>
@@ -129,7 +132,11 @@
                     </ul>
                 </nav>
                 <div class="header-with-search">
-                    <div class="header-logo">
+                    <label for="header-mobile-search-check-box" class="header-mobile-search">
+                        <i class="fab fa-sistrix header-mobile-search-icon"></i>
+                    </label>
+                    <!-- header logo -->
+                    <div class="header-logo hide-on-tablet">
                         <a href="#" class="header-logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65">
                                 <g fill-rule="evenodd">
@@ -138,6 +145,8 @@
                             </svg>
                         </a>
                     </div>
+                    <!-- header search -->
+                    <input type="checkbox" class="header-search-check-box" name="" hidden id="header-mobile-search-check-box">
                     <div class="header-search">
                         <div class="header-search-input-wrap">
                             <input type="text" placeholder="Nhập để tìm kiếm sản phẩm" class="header-search-form-control">
@@ -176,6 +185,8 @@
                         </div>
                         <button type="submit" class="header-search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
+
+                    <!-- header cart -->
                     <div class="header-cart">
                         <div class="header-cart-wrap">
                             <i class="fa-solid fa-cart-shopping header__cart-icon"></i>
@@ -295,11 +306,26 @@
                     </div>
                 </div>
             </div>
+            <ul class="header__soft-bar">
+                <li class="header__soft-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__soft-item">
+                    <a href="" class="header__sort-link header__sort-bar-primary">Mới nhất</a>
+                </li>
+                <li class="header__soft-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__soft-item">
+                    <a href="" class="header__sort-link">Giá
+                    </a>
+                </li>
+            </ul>
         </header>
         <main class="app__container">
-            <div class="grid">
-                <div class="grid-row-mg12 app-content">
-                    <div class="grid-colum-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app-content">
+                    <div class="col l-2 hide-on-tablet hide-on-mobile">
                         <nav class="category">
                             <h4 class="category-heading">
                                 Danh mục
@@ -326,8 +352,8 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="grid-colum-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12 content-product">
+                        <div class="home-filter hide-on-tablet hide-on-mobile">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="home-filter-btn btn"> Phổ biến</button>
                             <button class="home-filter-btn btn btn-primary">Mới nhất</button>
@@ -356,9 +382,34 @@
                                 </span>
                             </div>
                         </div>
+                        <nav class="mobile-category">
+                            <ul class="mobile-category-list">
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>   
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>   
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>  
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>  
+                                <li class="mobile-category-item">
+                                    <a href="" class="mobile-category-link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>  
+                            </ul>
+                        </nav>
                         <div class="home-product">
-                            <div class="grid-row">
-                                <div class="grid-colum-2-4">
+                            <div class="grid-row row sm-gutter">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -410,7 +461,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4  c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -462,7 +513,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -514,7 +565,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -566,7 +617,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -618,7 +669,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -670,7 +721,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -722,7 +773,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -774,7 +825,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -826,7 +877,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid-colum-2-4">
+                                <div class="l-2-4 m-4 c-6 col">
                                     <a href="#" class="home-product-item">
                                         <div class="home-product-item-img" style="background-image:url(./assets/img/container/sanpham.png   );"></div>
                                         <h4 class="home-product-item-name">Set kem mắt tái sinh Ohui The First Geniture
@@ -918,9 +969,9 @@
             </div>
         </main>
         <footer class="footer">
-            <div class="grid footer-content">
-                <div class="grid-row">
-                    <div class=" grid-colum-2-4">
+            <div class="grid wide footer-content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6 footer-content-item">
                         <h3 class="footer-heading">Chăm sóc khách hàng</h3>
                         <div class="footer-list">
                             <div class="footer-item"><a href="">Trung tâm trợ giúp</a></div>
@@ -928,7 +979,7 @@
                             <div class="footer-item"><a href="">Hướng dẫn mua hàng</a></div>
                         </div>
                     </div>
-                    <div class=" grid-colum-2-4">
+                    <div class="col l-2-4 m-4 c-6 footer-content-item">
                         <h3 class="footer-heading">Giới thiệu</h3>
                         <div class="footer-list">
                             <div class="footer-item"><a href="">Giới thiệu</a></div>
@@ -936,7 +987,7 @@
                             <div class="footer-item"><a href="">Điều khoản</a></div>
                         </div>
                     </div>
-                    <div class=" grid-colum-2-4">
+                    <div class="col l-2-4 m-4 c-6 footer-content-item">
                         <h3 class="footer-heading">Danh mục</h3>
                         <div class="footer-list">
                             <div class="footer-item"><a href="">Trang điểm mặt</a></div>
@@ -944,7 +995,7 @@
                             <div class="footer-item"><a href="">Trang điểm mắt</a></div>
                         </div>
                     </div>
-                    <div class=" grid-colum-2-4">
+                    <div class="col l-2-4 m-4 c-6 footer-content-item">
                         <h3 class="footer-heading">Theo dõi</h3>
                         <div class="footer-list">
                             <div class="footer-item">
@@ -958,24 +1009,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" grid-colum-2-4">
+                    <div class="col l-2-4 m-4 c-12 footer-content-item">
                         <h3 class="footer-heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer-list-app">
                            <img src="./assets/img/header/qr_code.png" alt="" class="footer-item-img">
-                           <span class="footer-app">
-                                <span class="footer-app-item">
-                                     <img src="./assets/img/header/google_play.png" alt="" class="footer-item-app-img">
-                                </span>
-                                <span class="footer-app-item">
-                                     <img src="./assets/img/header/app_store.png" alt="" class="footer-item-app-img">
-                                </span>
-                           </span>
+                           <div class="footer-app">
+                                <a href="">
+                                    <img src="./assets/img/header/google_play.png" alt="" class="footer-item-app-img">
+                                </a>
+                                <a href="">
+                                    <img src="./assets/img/header/app_store.png" class="footer-item-app-img">
+                                </a>
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <span class="footer-botom-end">&#169; 2019 - Bản quyền thuộc về Công ty MyCV</span>
+                &#169; 2019 - Bản quyền thuộc về Công ty MyCV
             </div>
         </footer>
     </div>

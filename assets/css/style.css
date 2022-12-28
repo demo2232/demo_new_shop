@@ -259,19 +259,34 @@
     align-items: center;
     margin: 0 8px;
 }
+.header-mobile-search{
+    padding: 12px;
+    display: none;
+}
+.header-mobile-search-icon{
+    font-size:2.6rem;
+    font-weight: bold;
+    color:var(--text-white-color)
+}
+/* header logo */
 .header-logo{
-    width: 200px;
+    width: 150px;
 }
 .header-logo-link{
     text-decoration: none;
+    line-height: 0;
     display: block;
     line-height: 0;
 }
 .header__logo-img{
-    width: 150px;
+    width: 80%;
     fill: var(--white-color);
 }
 /* header-search */
+.header-search-check-box:checked ~.header-search{
+    display: flex;
+    top: var(--header-height);
+}
 .header-search{
     flex: 1;
     height: 40px;
@@ -292,7 +307,7 @@
     padding: 0 16px;
     font-size: 1.5rem;
     border: none;
-    color:var(--text-greyish-color);
+    color:var(--text-black-color);
 }
 
 /* header search history */
@@ -355,6 +370,7 @@
     left: 0;
     top:calc(100% - 10px);
     display: none;
+    z-index: 2;
 }
 .header-search-option::before{
     position: absolute;
@@ -423,8 +439,9 @@
     font-size: 1.3rem;
     line-height:1.6rem;
     border-radius: 10px;
-    top:-4px;
-    right: -7px;
+    text-align: center;
+    top:-3px;
+    right: -1px;
 }
 
 /* header cart list */
@@ -539,6 +556,47 @@
     background-color:rgba(238, 77, 45, 0.855) ;
 }
 
+/* header sort bar */
+.header__soft-bar{
+    display: none;
+    align-items: center;
+    height:46px;
+    position: fixed;
+    top:var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    margin: 0;
+}
+.header__soft-item{
+    flex: 1;
+    position: relative;
+}
+.header__soft-item::after{
+    display: block;
+    content: "";
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 30px;
+    border-right: 1px solid #ccc;
+
+}
+.header__sort-link{
+   text-decoration: none;
+   color: var(--text-black-color);
+   font-size: 1.4rem;
+   display:block;
+   align-items: center;
+   line-height: 46px;
+   height: 100%;
+   text-align: center;
+}
+
+.header__sort-bar-primary{
+    color: var(--text-orange-color);
+}
 /* container */
 .app__container{
     background-color: rgb(245, 245, 245);
@@ -603,6 +661,47 @@
     color: var(--text-orange-color);
 }
 
+/* category mobile */
+.mobile-category{
+    display: none;   
+}
+.mobile-category-list{
+    display: flex;
+    padding:10px 0;
+    max-width: 100%;
+    list-style: none;
+    overflow-x: auto;
+}
+.mobile-category-item{
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+.mobile-category-item:nth-of-type(3n + 1) .mobile-category-link{
+    background-color: #599ee3;
+}
+.mobile-category-item:nth-of-type(3n + 2) .mobile-category-link{
+    background-color:#67e8d4;
+}.mobile-category-item:nth-of-type(3n + 3) .mobile-category-link{
+    background-color: #88CF81;
+}
+.mobile-category-link{
+    --line-height:2rem;
+    text-decoration: none;
+    color: var(--text-white-color);
+    font-size: 1.4rem;
+    line-height:var(--line-height);
+    height:calc(var(--line-height) * 2);
+    display: block;
+    padding: 0 6px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 110px;   
+    text-align: center;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+}
 /* home soft + filter */
 .home-filter{
     display: flex;
@@ -682,6 +781,7 @@
 .home-filter-disabled i{
     color: #ccc;
 }
+
 
 /* product content */
 .home-product-item{
@@ -841,8 +941,9 @@
     font-weight: 600;
 }
 .home-next-page-list{
+    --height:34px;
     margin:  35px 0;
-    height: 34px;
+    height: var(--height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -874,9 +975,6 @@
 .footer{
     border-top: 6px solid rgb(251, 101, 67);
     padding: 16px 0 0;
-}
-.footer-content{
-    height: 100px;
 }
 .footer-heading{
     font-size: 1.4rem;
@@ -914,14 +1012,20 @@
     display:flex;
     align-items: center;
 }
+
 .footer-app{
-    margin-left: 14px;
+    margin-left: 16px;
+}
+.footer-app-item{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .footer-item-app-img{
-    margin: 3px;
     height: 16px;
 }
 .footer-bottom{
+    display: block;
     margin-top: 50px;
     font-size: 1.2rem;
     text-align: center;
