@@ -64,9 +64,18 @@
 	.header-with-search{
 		justify-content: space-between;
 	}
+	.header-search-select-wrap{
+		line-height: 46px;
+	}
 	.header-cart,
 	.header-logo{
 		width: unset;
+	}
+	.header-cart-wrap{
+		padding:8px;
+	}
+	.header-cart-notice{
+		top: 5px;
 	}
 	.header__logo-img{
 		width: 110px;
